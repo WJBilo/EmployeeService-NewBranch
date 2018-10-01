@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EleverModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ElevTable">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fornavn" Type="varchar" MaxLength="50" />
+          <Property Name="efternavn" Type="varchar" MaxLength="50" />
+          <Property Name="tilstede" Type="bit" />
+          <Property Name="brugernavn" Type="nchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="60" />
+          <Property Name="magnetstribe" Type="varchar" MaxLength="20" />
+          <Property Name="magnet_crypt" Type="text" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="tjekind_timestamp" Type="datetime" />
+          <Property Name="user_level" Type="nvarchar" MaxLength="50" />
+          <Property Name="iSKP" Type="nvarchar" MaxLength="50" />
+          <Property Name="bemning" Type="nvarchar" MaxLength="50" />
+          <Property Name="debug" Type="text" />
+        </EntityType>
+        <EntityContainer Name="EleverModelStoreContainer">
+          <EntitySet Name="ElevTable" EntityType="Self.ElevTable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EleverModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EleverEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ElevTables" EntityType="EleverModel.ElevTable" />
+        </EntityContainer>
+        <EntityType Name="ElevTable">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fornavn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="efternavn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tilstede" Type="Boolean" />
+          <Property Name="brugernavn" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="magnetstribe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="magnet_crypt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tjekind_timestamp" Type="DateTime" Precision="3" />
+          <Property Name="user_level" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="iSKP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bemning" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="debug" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EleverModelStoreContainer" CdmEntityContainer="EleverEntities">
+          <EntitySetMapping Name="ElevTables">
+            <EntityTypeMapping TypeName="EleverModel.ElevTable">
+              <MappingFragment StoreEntitySet="ElevTable">
+                <ScalarProperty Name="debug" ColumnName="debug" />
+                <ScalarProperty Name="bemning" ColumnName="bemning" />
+                <ScalarProperty Name="iSKP" ColumnName="iSKP" />
+                <ScalarProperty Name="user_level" ColumnName="user_level" />
+                <ScalarProperty Name="tjekind_timestamp" ColumnName="tjekind_timestamp" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="magnet_crypt" ColumnName="magnet_crypt" />
+                <ScalarProperty Name="magnetstribe" ColumnName="magnetstribe" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="brugernavn" ColumnName="brugernavn" />
+                <ScalarProperty Name="tilstede" ColumnName="tilstede" />
+                <ScalarProperty Name="efternavn" ColumnName="efternavn" />
+                <ScalarProperty Name="fornavn" ColumnName="fornavn" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
