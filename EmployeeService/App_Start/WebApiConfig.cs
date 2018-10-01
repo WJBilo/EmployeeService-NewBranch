@@ -66,9 +66,9 @@ i added it to my Web API solution, by running Install-Package WebApiContrib.Form
 
 
             // Her ærklærer vi variablen jsonpFormatter og sætter den lig med en ny instance af JsonpMediaTypeFormatter
-            // Får at få fat i jsonformatter skal vi pass'er config objekt ind constructorensom, som bliver specificeret i Register funktionens parameter længere oppe
+            // Får at få fat i jsonformatter skal vi pass'er config objekt ind i constructoren som, som bliver specificeret i Register funktionens parameter længere oppe
 
-            var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
+            var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter); // Husk det er new jsonP der bliver lavet
             
 
             // Nu vil vi gerne have jsonp Formatet ind ind vores collection af formater i config objektet (config.Formatters) 

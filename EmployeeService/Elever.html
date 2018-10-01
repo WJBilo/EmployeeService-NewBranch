@@ -9,21 +9,29 @@
     <script type="text/javascript">
         $(document).ready(function () {
             var ulEmployees = $('#ulEmployees');
-            $('#btn').click(function () {
-                $.ajax({
+            $('#btn').click(function ()
+            {
+                $.ajax(
+                 {
                     type: 'GET',
                     url: "api/Elever/",
+                    // The type of data that you're expecting back from the server.
                     dataType: 'jsonp',
-                    success: function (data) {
+                    // (succes) A function to be called if the request succeeds.
+                    success: function (data)
+                    {
                         ulEmployees.empty();
-                        $.each(data, function (index, val) {
+                        $.each(data, function (index, val)
+                        {
                             var fullName = val.fornavn + ' ' + val.efternavn;
                             var status; 
                             
-                            if (val.tilstede == true) {
+                            if (val.tilstede == true)
+                            {
                                 status = ' tilstede';
                             }
-                            else {
+                            else
+                            {
                                 status = ' ikke tilstede';
                             }
                             ulEmployees.append('<li>' + fullName + status +'</li>');
