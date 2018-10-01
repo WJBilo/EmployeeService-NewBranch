@@ -74,7 +74,9 @@ i added it to my Web API solution, by running Install-Package WebApiContrib.Form
             // Nu vil vi gerne have jsonp Formatet ind ind vores collection af formater i config objektet (config.Formatters) 
             // Ved index position 0 vil vi indsætte jsonp formatet
             config.Formatters.Insert(0, jsonpFormatter);
-            
+
+            // Https configuration
+            config.Filters.Add(new RequireHttpsAttribute()); 
 
 
         }
