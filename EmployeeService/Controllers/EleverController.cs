@@ -14,6 +14,7 @@ namespace EmployeeService.Controllers
         private object entities;
         // NewBranch
         // Følgende Get udskriver en liste med alle Eleverne 
+        // Hej 
         public IEnumerable<ElevTable> Get()
         {
             /* 
