@@ -13,6 +13,7 @@ namespace EmployeeDataAcces
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
+    // Denne klasse hjælper os med at forbinde til databasen og hente elev enheder 
     public partial class EleverEntities : DbContext
     {
         public EleverEntities()
@@ -24,7 +25,8 @@ namespace EmployeeDataAcces
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
+        // Et Dbset representere en collection af alle enheder i Elev Tabbelen 
         public virtual DbSet<ElevTable> ElevTables { get; set; }
     }
 }

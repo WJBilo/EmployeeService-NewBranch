@@ -10,11 +10,10 @@ using EmployeeDataAcces;
 namespace EmployeeService.Controllers
 {
         public class EleverController : ApiController
-    {    // hej
+    {  
         private object entities;
-        // NewBranch
         // Følgende Get udskriver en liste med alle Eleverne 
-        // Hej 
+        // Denne metode kommer til at svare på et Get request.  
         public IEnumerable<ElevTable> Get()
         {
             /* 
@@ -23,6 +22,7 @@ namespace EmployeeService.Controllers
              så snart den er out of scope (Færdig med dens opgave). 
              https://stackoverflow.com/questions/75401/what-are-the-uses-of-using-in-c-sharp 
              */
+            // Vi laver en instance af klassen entities da denne klasse hjælper os med at forbinde til databasen og hente elev enheder 
             using (EleverEntities entities = new EleverEntities())
             {
 
@@ -45,6 +45,8 @@ namespace EmployeeService.Controllers
             }
 
         }
+
+        
 
 
 
