@@ -76,6 +76,7 @@ i added it to my Web API solution, by running Install-Package WebApiContrib.Form
             config.Formatters.Insert(0, jsonpFormatter);
 
             // Https configuration
+            // Følgende gør at man kan benytte https protokollen i hele Web api applikationen (For alle controllere og action methods). 
             config.Filters.Add(new RequireHttpsAttribute()); 
 
 
